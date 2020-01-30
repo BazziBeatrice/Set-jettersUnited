@@ -1,0 +1,327 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Swim against the tide</title>
+		
+		<!-- metatags -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="title" content="Set-jetters United">
+		<meta name="description" content="The one and only travel agency where you’ll find the most unique movie and TV series related activities that suit all cinematic tastes and passions.">
+		<meta name="keywords" content="set-jetting, travel agency, tour, movies, TV-series">
+		
+		<!-- Open Graph / Facebook metatags -->
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://densitydesign.github.io/teaching-dd15/course-results/es03/group04/">
+		<meta property="og:title" content="Set-jetters United">
+		<meta property="og:description" content="The one and only travel agency where you’ll find the most unique movie and TV series related activities that suit all cinematic tastes and passions.">
+		<meta property="og:image" content="https://ibb.co/kHPq0RF">
+		
+		<!-- Twitter metatags -->
+		<meta property="twitter:card" content="summary_large_image">
+		<meta property="twitter:url" content="https://densitydesign.github.io/teaching-dd15/course-results/es03/group04/">
+		<meta property="twitter:title" content="Set-jetters United">
+		<meta property="twitter:description" content="The one and only travel agency where you’ll find the most unique movie and TV series related activities that suit all cinematic tastes and passions.">
+		<meta property="twitter:image" content="https://ibb.co/kHPq0RF">
+		
+		<!-- link to Bootstrap css -->
+		<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+		
+		<!-- Link to css files -->
+		<link href="../css/main.css" rel="stylesheet" type="text/css"/>
+		<link href="../css/mediaqueries.css" rel="stylesheet" type="text/css"/>
+				
+		<!-- link to fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700&display=swap" rel="stylesheet">
+		
+		<!-- link to Favicons -->
+        <!-- third-generation iPad with high-resolution Retina display: -->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/images/favicons/favicon144.png">
+        <!-- iPhone with high-resolution Retina display: -->
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/images/favicons/favicon114.png">
+        <!-- first- and second-generation iPad: -->
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/images/favicons/favicon72.png">
+        <!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+        <link rel="apple-touch-icon-precomposed" href="../assets/images/favicons/favicon57.png">
+        <!-- basic favicon -->
+        <link rel="shortcut icon" href="../assets/images/favicons/favicon32.png">
+	</head>
+
+	<body>
+		<!--start Header Area-->
+		<header class="nav-bar nav-bar-color" id="nav-content">
+			<nav class="container-fluid">
+				<div class="margin-fifty">
+					<div class="row">
+						<a class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2" href="../index.html">
+							<img id="set-jetters-logo" src="../assets/images/Logo_w.png" alt="Set-jetters United logo"/>
+						</a>
+			
+						<div class="offset-xl-5 offset-lg-4 offset-md-3 offset-sm-5 offset-3 col-xl-5 col-lg-6 col-md-7 col-sm-5 col-7">
+							<div class="row">
+								<div class="bar-menu offset-xl-2 offset-lg-2 offset-md-0 offset-sm-2 offset-4 col-xl-7 col-lg-7 col-md-8 col-sm-6 col-4">
+									<a class="textbar" href="behindthescene.html">BEHIND THE SCENE</a>
+									<a href="behindthescene.html"><img id="icon-behindscene" src="../assets/images/icon-behindscene.png" alt="Icon backpack"/></a>
+								</div>
+									
+								<div class="bar-menu col-xl-3 col-lg-3 col-md-4 col-sm-3 col-4 cartbtn">
+									<a class="textbar" href="javascript:void(0)" onclick="openNav()">CART</a>
+									<a href="javascript:void(0)" onclick="openNav()"><img id="icon-backpack" src="../assets/images/icon-backpack.png" alt="Icon backpack"/></a>
+								</div>	
+									
+							</div>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</header>
+		
+		<!--CART POP-UP-->
+		<div id="mySidenav" class="sidenav">				
+			<div class="container-fluid">				  
+				<div class="cartcontent" id="cartcontent-cart">
+					<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+					<h3>CART</h3>
+								
+					<div class="row cartelement">
+						<div class="col-xl-4">
+							<img class="img-fluid" src="../assets/images/cartsquare.png" alt="Image not supported"/>
+						</div>
+						<div class="col-xl-6">
+							<h5>PIZZA IS ON THE HOUSE <br> Breaking Bad</h5>
+							<div class="adress" style="display: flex;">
+								<i class="fas fa-map-marker-alt" style="padding-right: 10px; padding-top: 3px;"></i>
+								<p>3828 Piermont Dr, Albuquerque, New Mexico 87112 USA</p>
+							</div>
+						</div>
+						<div class="col-xl-2">
+							<h5>25,99€</h5>
+						</div>
+					</div>
+							
+					<div class="row cartelement">
+						<div class="col-xl-4">
+							<img class="img-fluid" src="../assets/images/cartsquare.png" alt="Image not supported"/>
+						</div>
+						<div class="col-xl-6">
+							<h5>PIZZA IS ON THE HOUSE <br> Breaking Bad</h5>
+							<div class="adress" style="display: flex;">
+								<i class="fas fa-map-marker-alt" style="padding-right: 10px; padding-top: 3px;"></i>
+								<p>3828 Piermont Dr, Albuquerque, New Mexico 87112 USA</p>
+							</div>
+						</div>
+						<div class="col-xl-2">
+							<h5>25,99€</h5>
+						</div>
+					</div>									
+					<a class="purchasebtn" href="javascript:void(0)">PURCHASE</a>								
+				</div>
+			</div>
+		</div>
+		
+		<!--MORAL POP-UP-->
+		<div id="mySidemoral" class="sidemoral">				
+			<div class="container-fluid">				  
+				<div class="cartcontent cartcontent-moral">
+					<a href="javascript:void(0)" class="closebtn" onclick="closeMoral()">&times;</a>
+					<h3 class="margincards">MORALIST PAGE</h3>
+
+					<div class="moraltext">
+						<h4>We’d like to take the merit for coming up with this great activities, but actually they are all true! </h4> 
+									
+						<p>Somebody really threw pizza on the Walter White House and some other fan really took dirt from Burkittsville cemetery. Fans from all over the world love to visit their favourite film or TV series locations, but for the sake of the fandom, they can also become ruthless and disregard common sense. Everybody has the right to enjoy and visit these locations, so don’t be a toxic fan, respect the places and the people.
+						</p>
+										
+						<div style="margin-top: 100px;">
+							<p style="text-align: center;">Find out more about the project:</p>
+							<a href="behindthescene.html" class="moralbtn">BEHIND THE SCENE</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- start Section Area-->
+		<main id="main-content">		
+			<section class="container-fluid">
+				
+				<!--Fullscreen image-->
+				<img src="../assets/images/category03.jpg" class="full-img img-fluid" alt="Image not supported"/>
+				
+				<div class="margin-fifty category-all">
+					<div class="row">
+						<!--Category Text-->
+						<article class="category-text col-xl-4 col-lg-6 col-md-5 col-sm-12 col-12">
+							<div class="sticky">
+								<div class="category-title">
+									<p>SWIM AGAINST <br>THE TIDE</p>
+								</div>
+								<div>
+									<p>Tired of your boring daily routine? Here you have a selection of activities made just for you. Go and follow your instinct.</p>
+								</div>
+						
+						
+								<!--Change category-->
+								<div class="category-choose">
+									<p>See the other categories:</p>														
+									<a href="../category01/category01.html" class="category-change-btn">MAKE YOUR PRESENCE STAND OUT</a>
+									<a href="../category02/category02.html" class="category-change-btn">LEAVE YOUR MARK ON THE WORLD</a>
+									<a href="../category04/category04.html" class="category-change-btn">FEEL THE ADRENALINE FLOWING</a>
+								</div>
+							</div>
+						</article>
+				
+						<!--Category Cards-->
+						<article class="category-cards offset-xl-1 offset-lg-1 offset-md-1 col-xl-7 col-lg-5 col-md-6">
+						
+							<!--Row #1-->
+							<div class="row margincards">
+								<a href="03-strip.html" class="col-xl-4 col-lg-12 col-md-12 col-sm-12 offset-xl-0 offset-md-0 offset-1 col-10 offset-xl-0 offset-md-0 offset-1 activitiycard">
+									<div class="img-hover-zoom">
+										<img class="img-fluid" src="../assets/images/cards/03-chernobyl.jpg" alt="Image not supported">
+										<div class="textabove">
+											<p style="display: inline">Prypyat</p>
+											<p class="post"> <i class="fab fa-instagram pr-2" ></i>19.468</p>
+											<h5>STRIP, CLOTHES ARE RADIOACTIVE!</h5>
+											<p class="serietitle">Chernobyl</p>
+											<p class="price">80,99 €</p>
+										</div>
+									</div>
+								</a>
+									
+								<a href="03-yoga.html" class="col-xl-4 col-lg-12 col-md-12 col-sm-12 offset-xl-0 offset-md-0 offset-1 col-10 offset-xl-0 offset-md-0 offset-1 activitiycard">
+									<div class="img-hover-zoom">
+										<img class="img-fluid" src="../assets/images/cards/03-eatpraylove.jpg" alt="Image not supported">
+										<div class="textabove">
+											<p style="display: inline">Bali</p>
+											<p class="post"> <i class="fab fa-instagram pr-2" ></i>3.516</p>
+											<h5>YOGA YOUR WAY IN THE TEMPLE</h5>
+											<p class="serietitle">Eat Pray Love</p>
+											<p class="price">23,99 €</p>
+										</div>
+									</div>
+								</a>
+								
+								<a href="03-getwith.html" class="col-xl-4 col-lg-12 col-md-12 col-sm-12 offset-xl-0 offset-md-0 offset-1 col-10 offset-xl-0 offset-md-0 offset-1 activitiycard">
+									<div class="img-hover-zoom">
+										<img class="img-fluid" src="../assets/images/cards/02-03-got3.jpg" alt="Image not supported">
+										<div class="textabove">
+											<p style="display: inline">Reykjahlíð</p>
+											<p class="post"> <i class="fab fa-instagram pr-2" ></i>136</p>
+											<h5>GET WET WITH THE WILDLING GIRL</h5>
+											<p class="serietitle">Game of Thrones</p>
+											<p class="price">115,99 €</p>
+										</div>
+									</div>
+								</a>
+							</div>
+
+							<!--Row #2-->
+							<div class="row margincards">
+								<a href="03-climb.html" class="col-xl-4 col-lg-12 col-md-12 col-sm-12 offset-xl-0 offset-md-0 offset-1 col-10 offset-xl-0 offset-md-0 offset-1 activitiycard">
+									<div class="img-hover-zoom">
+										<img class="img-fluid" src="../assets/images/cards/03-04-laracroft.jpg" alt="Image not supported">
+										<div class="textabove">
+											<p style="display: inline">Angkor</p>
+											<p class="post"> <i class="fab fa-instagram pr-2" ></i>1.142</p>
+											<h5>CLIMB LIKE ANGELINA</h5>
+											<p class="serietitle">Lara Croft: Tomb...</p>
+											<p class="price">73,99 €</p>
+										</div>
+									</div>
+								</a>
+									
+								<a href="03-youcan.html" class="col-xl-4 col-lg-12 col-md-12 col-sm-12 offset-xl-0 offset-md-0 offset-1 col-10 offset-xl-0 offset-md-0 offset-1 activitiycard">
+									<div class="img-hover-zoom">
+										<img class="img-fluid" src="../assets/images/cards/03-mammamia.jpg" alt="Image not supported">
+										<div class="textabove">
+											<p style="display: inline">Skopelos</p>
+											<p class="post"> <i class="fab fa-instagram pr-2" ></i>884</p>
+											<h5>YOU CAN MARRY, YOU CAN CONVERT</h5>
+											<p class="serietitle">Mamma Mia!</p>
+											<p class="price">49,99 €</p>
+										</div>
+									</div>
+								</a>
+								
+								<a href="03-getsouvenirs.html" class="col-xl-4 col-lg-12 col-md-12 col-sm-12 offset-xl-0 offset-md-0 offset-1 col-10 offset-xl-0 offset-md-0 offset-1 activitiycard">
+									<div class="img-hover-zoom">
+										<img class="img-fluid" src="../assets/images/cards/03-theblairwitchproject.jpg" alt="Image not supported">
+										<div class="textabove">
+											<p style="display: inline">Burkittsville</p>
+											<p class="post"> <i class="fab fa-instagram pr-2" ></i>1.575</p>
+											<h5>GET SOME SPOOKY SOUVENIRS</h5>
+											<p class="serietitle">The Blair Witch P...</p>
+											<p class="price">41,99 €</p>
+										</div>
+									</div>
+								</a>
+							</div>
+						
+							<!--Row #3-->
+							<div class="row">
+								<a href="03-godyes.html" class="col-xl-4 col-lg-12 col-md-12 col-sm-12 offset-xl-0 offset-md-0 offset-1 col-10 offset-xl-0 offset-md-0 offset-1 ">
+									<div class="img-hover-zoom">
+										<img class="img-fluid" src="../assets/images/cards/01-03-whenharrymetsally.jpg" alt="Image not supported">
+										<div class="textabove">
+											<p style="display: inline">New York</p>
+											<p class="post"> <i class="fab fa-instagram pr-2" ></i>8.237</p>
+											<h5>OH GOD, YES, YEEEEESSSSS!</h5>
+											<p class="serietitle">When Harry Met...</p>
+											<p class="price">20,99 €</p>
+										</div>
+									</div>
+								</a>
+							</div>
+						</article>			
+					</div>
+				</div>
+			</section>
+		</main>
+	
+		<!--start Footer Area-->
+		<footer id="footer">		
+			<div class="container-fluid">
+				<div class="margin-fifty">
+					<div class="row">
+						<!--Juicy infos about us-->
+						<div class="about col-xl-3 col-lg-5 col-md-8 col-sm-12 col-12">
+							<h6>JUICY INFOS ABOUT US</h6>
+							<p>Set-jetters United is the one and only travel agency where you’ll find the most unique movie and TV series related activities. All of them are selected with the utmost care and love to provide you the very best experience ever.</p>
+						</div>
+					
+						<!--Contact-->
+						<div class="contact offset-xl-1 col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+							<h6>CONTACT</h6>
+							<p>Drop us a line at <a href="" id="info-email">info@setjettersunited.com</a></p>
+							<div class="social-icon">
+								<a href=""><img src="../assets/images/icon-fb.png" alt="Icon fb" id="icon-fb"/></a>
+								<a href=""><img src="../assets/images/icon-twitter.png" alt="Icon Twitter" id="icon-twitter"/></a>
+								<a href=""><img src="../assets/images/icon-ig.png" alt="Icon ig" id="icon-ig"/></a>
+							</div>
+						</div>
+					
+						<!--Keep up to date-->
+						<div class="newsletter col-xl-5 col-lg-4 col-md-12 col-sm-12 col-12">
+							<h6>KEEP UP TO DATE</h6>
+							<form>
+								<input type="text" id="enter-email" value="Enter your email here..." name="email">
+								<input type="submit" id="subscribe" value="SUBSCRIBE" name="subscribe">
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	
+		<!-- links to Javascript files -->
+		<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+		<script type="text/javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../js/main.js"></script>
+		
+		<!-- link to FontAwesome -->
+   		<script src="https://kit.fontawesome.com/fe7d3f2655.js" crossorigin="anonymous"></script>
+		
+	</body>
+</html>
