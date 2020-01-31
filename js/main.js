@@ -487,4 +487,4 @@ window.setTimeout(function(){
     loader.style.height="500px";
     loader.style.width="500px";
     loader.style.visibility ="hidden";
-}, 1000);
+}, 2000);
