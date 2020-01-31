@@ -369,7 +369,7 @@ $(" #swimagainst-mobile").hover(
 );
 
 // ----------------------
-$(" #leaveyourmark").hover(
+$(" #leaveyourmark-mobile").hover(
   function() {
     $(this).css("opacity", "0");
     $("#leaveyourmark_hover-mobile").css("opacity", "1");
