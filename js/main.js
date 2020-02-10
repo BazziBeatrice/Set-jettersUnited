@@ -5,21 +5,20 @@
 $(window).scroll(
         function(){
                         var scroll = $(window).scrollTop();
-                        if (scroll < 1300) {$('.nav-bar-transition').css('background','none'); }
+                        if (scroll < 1300) {$('.nav-bar-transition').css('background','none'); }         
                         else {  $('.nav-bar-transition').css('background','black');}
                   }
 )
 
 //variables
-//!!!!!!!!!!!!!!!!!!----------------!!!!!!!!!!!!!!!----------------!!!!!!!!!!!!!!!!!!!
-//!!!!!!!!!------this list has to be completed with all the page names------!!!!!!!!!!!!!!!
+//this list contains all the page names necessary to display the elements in the cart and moralist page
         var listTour = ["01-gohaunt","01-pizza","01-hear", "01-bestdo", "01-gotmoves", "01-show", "01-door", "01-knock", "01-godyes", "02-driveyourcart", "02-getwith", "02-wire", "02-stand", "02-onthehunt", "02-thebeach", "03-strip", "03-yoga", "03-getwith", "03-climb", "03-youcan", "03-getsouvenirs", "03-godyes", "04-feelfree", "04-reachtheufo","04-anything", "04-everybody", "04-climb"];
-
+        
         var listMorals =["01-gohaunt", "01-pizza", "01-hear", "01-bestdo", "01-gotmoves", "01-show", "01-door", "01-knock", "01-godyes", "02-driveyourcart", "02-getwith", "02-wire", "02-stand", "02-onthehunt", "02-thebeach", "03-strip", "03-yoga", "03-getwith", "03-climb", "03-youcan", "03-getsouvenirs", "03-godyes", "04-feelfree", "04-reachtheufo", "04-anything", "04-everybody", "04-climb"];
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//pageName is the variable that will be used to check the name of each page
         var pageName;
 
-$(document).ready(function(){
+$(document).ready(function(){   
 
         pageName= location.pathname.substring(location.pathname.lastIndexOf("/")+1);
         pageName= pageName.substring(0,pageName.lastIndexOf("."))
@@ -29,14 +28,14 @@ $(document).ready(function(){
                 FillCart();
 
         // this function checks if the cart is full or empty and changes cart icon
-                function CheckCartIcon() {
-
+                function CheckCartIcon() { 
+              
                         var empty= true;
 
-                        for (var i = 0; i < listTour.length; i++)
+                        for (var i = 0; i < listTour.length; i++) 
                                 {
-                                  if (localStorage.getItem(listTour[i])== "true")
-                                        {
+                                  if (localStorage.getItem(listTour[i])== "true") 
+                                        { 
                                           console.log("c'è" + listTour[i]);
                                           empty=false;
                                         }
@@ -45,16 +44,16 @@ $(document).ready(function(){
                          // Let's check if we are in the homepage or behindthescene!
                         var pathImgFull="../assets/images/icon-backpack-full.png";
                         var pathImgEmpty ="../assets/images/icon-backpack.png";
-
-                        if(pageName=="index" || pageName=="behindthescene")
+                        //the empty condition is necessary for when the github link oesn't show any name
+                        if(pageName=="index" || pageName=="behindthescene"|| pageName==="")
                                 {
                                  pathImgFull="assets/images/icon-backpack-full.png";
                                  pathImgEmpty="assets/images/icon-backpack.png";
                                 }
 
                          // change icon if cart is filled or empty
-                        if(empty== true)
-                            {
+                        if(empty== true) 
+                            { 
                               $("#icon-backpack").attr('src',pathImgEmpty);
                             }
                         else
@@ -66,10 +65,10 @@ $(document).ready(function(){
         //this function checks if elements ar added to cart and adds or removes the class that makes them invisible
                 function FillCart() {
 
-                        for (var i = 0; i < listTour.length; i++)
-                                {
-                                        if (localStorage.getItem(listTour[i])== "true")
-                                                {
+                        for (var i = 0; i < listTour.length; i++) 
+                                {                                         
+                                        if (localStorage.getItem(listTour[i])== "true") 
+                                                { 
                                                   console.log("c'è" + listTour[i]);
                                                   $("#cartelement-"+listTour[i]).removeClass("cartelement-hide");
                                                 }
@@ -79,10 +78,10 @@ $(document).ready(function(){
                                              }
                         }
                         //this bit fills the moralis page with the appropriate surce and disclosure text
-                        for (var i = 0; i < listMorals.length; i++)
-                                {
-                                        if (localStorage.getItem(listMorals[i])== "true")
-                                                {
+                        for (var i = 0; i < listMorals.length; i++) 
+                                {                                         
+                                        if (localStorage.getItem(listMorals[i])== "true") 
+                                                { 
                                                   console.log("c'è" + listMorals[i]);
                                                   $("#moral-"+listMorals[i]).removeClass("cartelement-hide");
                                                 }
@@ -95,14 +94,14 @@ $(document).ready(function(){
 
         //add to cart btn unhides elements
                 $("#addCartbtn").click(
-                        function() {
+                        function() {                                                    
                                     localStorage.setItem(pageName, "true");
                                     CheckCartIcon();
-                                    FillCart();
-                                  }
-                );
+                                    FillCart();                
+                                  }                
+                ); 
 
-        //remove elements from cart
+        //remove elements from cart when clicking the element x
                 $(".cartelement-x").click(
                           function() {
                                       var xSuffix=$(this).attr('id').substring($(this).attr('id').lastIndexOf("_")+1);
@@ -120,17 +119,17 @@ $(document).ready(function(){
                 );
         // purchase click opens moralist page and closes cart
                 $(".purchasebtn").click(
-                         function() {
+                         function() {                                        
                                      //close the cart
                                          $("#mySidenav").css("width", "0");
                                          $("#cartcontent-cart").fadeOut(500, "linear");
-
+                                      
                                      //open moralist page
-                                         if (windWidth<=898) {$("#mySidemoral").css("width", "100%");}
+                                         if (windWidth<=898) {$("#mySidemoral").css("width", "100%");} 
                                          else if(windWidth>898 && windWidth<=1024) {$("#mySidemoral").css("width", "75%");}
                                          else if(windWidth>1024 && windWidth<=1280) {$("#mySidemoral").css("width", "60%");}
                                          else {$("#mySidemoral").css("width", "50%");}
-                                         $(".cartcontent-moral").delay(500).fadeIn(500,"linear" );
+                                         $(".cartcontent-moral").delay(500).fadeIn(500,"linear" );                                         
                                     }
                 );
 
@@ -138,24 +137,24 @@ $(document).ready(function(){
                 $(".moralbtn").click(
                         function() {
                                      $(".cartcontent-moral").fadeOut(500, "linear");
-                                        //this empies the cart
+                                        //this empies the cart                               
                                         localStorage.clear();
                                         CheckCartIcon();
                                         FillCart();
-                                    }
+                                    } 
                 );
 
         // category color change on hover and background image change
-                $(".whiteHover").hover(
-
+                $(".categoryBt").hover( 
+                        
                         function(){  if (windWidth>=3500) {
                                                          $(".whiteHover").css({"color": "white", "border": "5px solid white" });
                                                          $(".categoryLinks").css("color", "white");
                                                          $(".dropdownTxt").css("color", "white");
                                                          $(".categoryDescr").css({"border": "5px solid white", "border-top-style": "none"});
-                                                        }
+                                                        } 
                                      else{
-                                        $(".whiteHover").css({"color": "white", "border": "2px solid white" });
+                                        $(".categoryBt").addClass("whiteHover");
                                         $(".categoryDescr").css("border-top-style", "none");
                                         $(".categoryLinks").css("color", "white");
                                         }
@@ -166,60 +165,71 @@ $(document).ready(function(){
                                                          $(".categoryLinks").css("color", "#F39200");
                                                          $(".dropdownTxt").css("color", "#F39200");
                                                          $(".categoryDescr").css({"border": "5px solid #F39200", "border-top-style": "none"});
-                                                        }
+                                                        } 
                                      else{
-                                        $(".whiteHover").css({"color": "#F39200", "border": "2px solid #F39200"});
+                                        $(".categoryBt").removeClass("whiteHover");
                                         $(".categoryDescr").css("border-top-style", "none");
                                         $(".categoryLinks").css("color", "#F39200");
                                         }
-                                  },
+                                  },                                                                                    
         );
 
-        //this function makes the category image appear on hover
-                $("#MAKE").hover(
-                        function(){
-                                        $("#CategoryContainer").addClass("CategoryImgFadeIn");
-                                        $("#CategoryContainer").css("background-image", "url('assets/images/category01.jpg')")
-                                  },
+        //this function makes the category image appear on hover 
 
-                        function(){     $("#CategoryContainer").removeClass("CategoryImgFadeIn");
-                                        $("#CategoryContainer").css("background-image", "none")
+                $("#MAKE").hover(       
+                        function(){     if (windWidth>1100 && windWidth<2000) {                                      
+                                                $("#CategoryContainer").addClass("CategoryImgFadeIn");
+                                                $("#CategoryContainer").css("background-image", "url('assets/images/category01.jpg')")
+                                        }
+                                  },
+                        
+                        function(){      if (windWidth>1100 && windWidth<2000) {                                  
+                                                $("#CategoryContainer").removeClass("CategoryImgFadeIn");
+                                                $("#CategoryContainer").css("background-image", "none")
+                                        }
                                   }
                 );
 
                  $("#LEAVE").hover(
-                        function(){
-                                        $("#CategoryContainer").addClass("CategoryImgFadeIn");
-                                        $("#CategoryContainer").css("background-image", "url('assets/images/category02.jpg')")
+                        function(){    
+                                        if (windWidth>1100 && windWidth<2000) {
+                                                $("#CategoryContainer").addClass("CategoryImgFadeIn");
+                                                $("#CategoryContainer").css("background-image", "url('assets/images/category02.jpg')")
+                                        }
                                   },
-
-                        function(){
-                                $("#CategoryContainer").removeClass("CategoryImgFadeIn");
-                                        $("#CategoryContainer").css("background-image", "none")
+                                
+                        function(){      if (windWidth>1100 && windWidth<2000) {                                  
+                                                $("#CategoryContainer").removeClass("CategoryImgFadeIn");
+                                                $("#CategoryContainer").css("background-image", "none")
+                                        }
                                   }
                 );
 
                  $("#SWIM").hover(
-                        function(){
-                                        $("#CategoryContainer").addClass("CategoryImgFadeIn");
-                                        $("#CategoryContainer").css("background-image", "url('assets/images/category03.jpg')")
+                        function(){      if (windWidth>1100 && windWidth<2000) {                                  
+                                                $("#CategoryContainer").addClass("CategoryImgFadeIn");
+                                                $("#CategoryContainer").css("background-image", "url('assets/images/category03.jpg')")
+                                        }
                                   },
-
-                        function(){
-                                        $("#CategoryContainer").removeClass("CategoryImgFadeIn");
-                                        $("#CategoryContainer").css("background-image", "none")
+                        
+                        function(){      if (windWidth>1100 && windWidth<2000) {                                       
+                                                $("#CategoryContainer").removeClass("CategoryImgFadeIn");
+                                                $("#CategoryContainer").css("background-image", "none")
+                                        }
                                   }
                 );
 
                  $("#FEEL").hover(
-                        function(){
-                                        $("#CategoryContainer").addClass("CategoryImgFadeIn");
-                                        $("#CategoryContainer").css("background-image", "url('assets/images/category04.jpg')")
+                        function(){      if (windWidth>1100 && windWidth<2000) {                                  
+                                                $("#CategoryContainer").addClass("CategoryImgFadeIn");
+                                                $("#CategoryContainer").css("background-image", "url('assets/images/category04.jpg')")
+                                        }
                                   },
-
-                        function(){
-                                        $("#CategoryContainer").removeClass("CategoryImgFadeIn");
-                                        $("#CategoryContainer").css("background-image", "none")
+                        
+                        function(){      if (windWidth>1100 && windWidth<2000) {                                  
+                                                $("#CategoryContainer").removeClass("CategoryImgFadeIn");
+                                                $("#CategoryContainer").css("background-image", "none")
+                                        }
                                   }
                 );
 
@@ -227,13 +237,24 @@ $(document).ready(function(){
                 $(".dropbtn-calendar").click(
                         function() {
                                      $(".dropdown-content-calendar").toggle();
-                                     $(this).toggleClass("noBottom");
+                                     $(this).toggleClass("noBottom"); 
+                                     if($(".dropdown-content").is(":visible"))
+                                                {
+                                                 $(".dropdown-content").toggle();
+                                                 $(".dropbtn").toggleClass("noBottom");
+                                                } 
                         }
                 );
                 $(" .dropbtn-calendar-cart").click(
                         function() {
                                      $(this).siblings(".dropdown-content-calendar-cart").toggle();
-                                     $(this).toggleClass("noBottom");
+                                     $(this).toggleClass("noBottom"); 
+                                     if($(".dropdown-content-cart").is(":visible"))
+                                                {
+                                                 $(".noBottom").siblings(".dropdown-content-cart").toggle();
+                                                 $(".dropbtn-cart.noBottom").toggleClass("noBottom");
+                                                } 
+                                                                          
                         }
                 );
 
@@ -242,15 +263,26 @@ $(document).ready(function(){
                         function() {
                                         $(".dropdown-content").toggle();
                                         $(this).toggleClass("noBottom");
+                                        if($(".dropdown-content-calendar").is(":visible"))
+                                                {
+                                                 $(".dropdown-content-calendar").toggle();
+                                                 $(".dropbtn-calendar").toggleClass("noBottom");
+                                                }
+
                         }
                 );
                 $(".dropbtn-cart").click(
                         function() {
                                         $(this).siblings(".dropdown-content-cart").toggle();
                                         $(this).toggleClass("noBottom");
+                                        if($(".dropdown-content-calendar-cart").is(":visible"))
+                                                {
+                                                 $(".noBottom").siblings(".dropdown-content-calendar-cart").toggle();
+                                                 $(".dropbtn-calendar-cart.noBottom").toggleClass("noBottom");
+                                                }
                         }
                 );
-
+    
         //about--------------------------------------------//
 
                 $("#makeyourpresence").hover(
@@ -291,8 +323,8 @@ $(document).ready(function(){
                             $("#leaveyourmark_hover").css("opacity", "0");
                             }
                 );
-
-
+    
+    
         //svg mobile--------------------------------------------
 
     $("#makeyourpresence-mobile").hover(
@@ -341,14 +373,14 @@ $(document).ready(function(){
         $("#leaveyourmark_hover-mobile").css("opacity", "0");
       }
     );
-
-
+        
+    
     //Audio
     $("#buttonAudio").click(function(){
         toggleMute();
     });
-
-
+    
+    
     //about--------------------------------------------
 
         $("#makeyourpresence").hover(
@@ -389,13 +421,13 @@ $(document).ready(function(){
                             $("#leaveyourmark_hover").css("opacity", "0");
                             }
                      );
-
+    
 });
 
 
 //Audio button//
 function toggleMute() {
-
+    
     var video=document.getElementById("coverVideo")
     if(video.muted){video.muted = false;
                     $('#buttonAudio').attr('src', "assets/images/icon-mutono.png");
@@ -410,22 +442,22 @@ function toggleMute() {
 
 //Reviews//
 $(".show-more a").on("click", function() {
-    var $this = $(this);
+    var $this = $(this); 
     var $content = $this.parent().prev("div.content");
-    var linkText = $this.text().toUpperCase();
-
+    var linkText = $this.text().toUpperCase();    
+    
     if(linkText === "SHOW MORE"){
         linkText = "show less";
         $content.switchClass("hideContent", "showContent", 400);
     }
-
+    
     else {
         linkText = "show more";
         $content.switchClass("showContent", "hideContent", 400);
     };
-
+        
     $this.text(linkText);
-
+        
 });
 
   var windWidth = $(window).width();
@@ -445,11 +477,11 @@ function closeMoral() {
     $(".cartcontent-moral").fadeOut(100, "linear");
 }
 
-function openNav() {
+function openNav() { 
     if (windWidth<=898) {$("#mySidenav").css("width", "100%");}
     else if(windWidth>898 && windWidth<=1024) {$("#mySidenav").css("width", "75%");}
-    else if(windWidth>1024 && windWidth<=1280) {$("#mySidenav").css("width", "60%");}
-    else {$("#mySidenav").css("width", "50%");}
+    else if(windWidth>1024 && windWidth<=1280) {$("#mySidenav").css("width", "60%");} 
+    else {$("#mySidenav").css("width", "50%");}  
     $("#main-content, #footer, #nav-content").css("opacity", "0.2");
     $("body").css("background-color", "rgb(0,0,0,0.8)");
 }
@@ -458,22 +490,22 @@ function openNav() {
 
 //Menu category//
 function showMake() {
-    $("#makebtn").css("display", "inline-block");
-    $("#leavebtn, #swimbtn, #feelbtn").css("display", "none");
+    $("#makebtn").css("display", "inline-block");  
+    $("#leavebtn, #swimbtn, #feelbtn").css("display", "none");      
 };
 
-function showLeave() {
-    $("#leavebtn").css("display", "inline-block");
+function showLeave() { 
+    $("#leavebtn").css("display", "inline-block"); 
     $("#makebtn, #swimbtn, #feelbtn").css("display", "none");
 };
 
 function showSwim() {
-    $("#swimbtn").css("display", "inline-block");
+    $("#swimbtn").css("display", "inline-block");  
     $("#leavebtn, #makebtn, #feelbtn").css("display", "none");
 };
 
 function showFeel() {
-    $("#feelbtn").css("display", "inline-block");
+    $("#feelbtn").css("display", "inline-block");  
     $("#leavebtn, #swimbtn, #makebtn").css("display", "none");
 };
 
@@ -487,4 +519,6 @@ window.setTimeout(function(){
     loader.style.height="500px";
     loader.style.width="500px";
     loader.style.visibility ="hidden";
-}, 2000);
+}, 1700);
+
+
